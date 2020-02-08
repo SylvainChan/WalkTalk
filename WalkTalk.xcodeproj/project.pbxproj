@@ -17,8 +17,9 @@
 		C76F2AD323ED9A1000942E6A /* EntranceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2ACB23ED9A1000942E6A /* EntranceInteractor.swift */; };
 		C76F2AD623ED9A5C00942E6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AD523ED9A5C00942E6A /* ViewController.swift */; };
 		C76F2AD923ED9AEF00942E6A /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AD823ED9AEF00942E6A /* UIStoryboardExtension.swift */; };
+		C76F2ADE23EDA49900942E6A /* PeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2ADD23EDA49900942E6A /* PeerManager.swift */; };
+		C76F2AE123EDA7F400942E6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AE023EDA7F400942E6A /* User.swift */; };
 		C7D1E1F123ED938F00DF3BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1E1F023ED938F00DF3BB8 /* AppDelegate.swift */; };
-		C7D1E1F323ED938F00DF3BB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1E1F223ED938F00DF3BB8 /* SceneDelegate.swift */; };
 		C7D1E1F523ED938F00DF3BB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1E1F423ED938F00DF3BB8 /* ContentView.swift */; };
 		C7D1E1F723ED939000DF3BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D1E1F623ED939000DF3BB8 /* Assets.xcassets */; };
 		C7D1E1FA23ED939000DF3BB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D1E1F923ED939000DF3BB8 /* Preview Assets.xcassets */; };
@@ -47,9 +48,10 @@
 		C76F2ACB23ED9A1000942E6A /* EntranceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceInteractor.swift; sourceTree = "<group>"; };
 		C76F2AD523ED9A5C00942E6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C76F2AD823ED9AEF00942E6A /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		C76F2ADD23EDA49900942E6A /* PeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerManager.swift; sourceTree = "<group>"; };
+		C76F2AE023EDA7F400942E6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C7D1E1ED23ED938F00DF3BB8 /* WalkTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D1E1F023ED938F00DF3BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C7D1E1F223ED938F00DF3BB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C7D1E1F423ED938F00DF3BB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C7D1E1F623ED939000DF3BB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7D1E1F923ED939000DF3BB8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -81,6 +83,8 @@
 		C76F2AC223ED997900942E6A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C76F2ADF23EDA7E100942E6A /* Entities */,
+				C76F2ADC23EDA47A00942E6A /* Manager */,
 				C76F2AD423ED9A2900942E6A /* Common */,
 				C76F2AC323ED99C000942E6A /* Entrance */,
 			);
@@ -118,6 +122,22 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		C76F2ADC23EDA47A00942E6A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C76F2ADD23EDA49900942E6A /* PeerManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C76F2ADF23EDA7E100942E6A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C76F2AE023EDA7F400942E6A /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		C7D1E1E423ED938F00DF3BB8 = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +162,6 @@
 				C76F2AD723ED9AE400942E6A /* Extension */,
 				C76F2AC223ED997900942E6A /* Scenes */,
 				C7D1E1F023ED938F00DF3BB8 /* AppDelegate.swift */,
-				C7D1E1F223ED938F00DF3BB8 /* SceneDelegate.swift */,
 				C7D1E1F423ED938F00DF3BB8 /* ContentView.swift */,
 				C7D1E1F623ED939000DF3BB8 /* Assets.xcassets */,
 				C7D1E1FB23ED939000DF3BB8 /* LaunchScreen.storyboard */,
@@ -273,9 +292,10 @@
 			files = (
 				C76F2ACF23ED9A1000942E6A /* EntranceRouter.swift in Sources */,
 				C7D1E1F123ED938F00DF3BB8 /* AppDelegate.swift in Sources */,
-				C7D1E1F323ED938F00DF3BB8 /* SceneDelegate.swift in Sources */,
+				C76F2ADE23EDA49900942E6A /* PeerManager.swift in Sources */,
 				C76F2AD023ED9A1000942E6A /* EntranceModels.swift in Sources */,
 				C76F2AD623ED9A5C00942E6A /* ViewController.swift in Sources */,
+				C76F2AE123EDA7F400942E6A /* User.swift in Sources */,
 				C76F2AD323ED9A1000942E6A /* EntranceInteractor.swift in Sources */,
 				C76F2ACD23ED9A1000942E6A /* EntrancePresenter.swift in Sources */,
 				C7D1E1F523ED938F00DF3BB8 /* ContentView.swift in Sources */,
@@ -436,14 +456,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WalkTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = X2ASXG7RKD;
+				DEVELOPMENT_TEAM = 4DMXJ47M5Y;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WalkTalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sylvain.wk.WalkTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sylvain.WalkTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,14 +477,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WalkTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = X2ASXG7RKD;
+				DEVELOPMENT_TEAM = 4DMXJ47M5Y;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WalkTalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sylvain.wk.WalkTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sylvain.WalkTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,28 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Entrance View Controller-->
         <scene sceneID="jkF-uZ-Cdt">
             <objects>
-                <viewController storyboardIdentifier="EntranceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pCD-Nm-RIc" customClass="EntranceViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EntranceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pCD-Nm-RIc" customClass="EntranceViewController" customModule="WalkTalk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kpx-MD-0dj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Umz-i6-jdH">
+                                <rect key="frame" x="20" y="587" width="335" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZT-SZ-2y3" userLabel="Create">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <state key="normal" title="Create"/>
+                                        <connections>
+                                            <action selector="buttonDidPress:" destination="pCD-Nm-RIc" eventType="touchUpInside" id="zZv-Lt-zKs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dN3-vC-1aP">
+                                        <rect key="frame" x="0.0" y="30" width="335" height="30"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="buttonDidPress:" destination="pCD-Nm-RIc" eventType="touchUpInside" id="pph-CX-uMQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Umz-i6-jdH" firstAttribute="leading" secondItem="a7g-Wg-ADJ" secondAttribute="leading" constant="20" id="2Hw-2v-FWp"/>
+                            <constraint firstItem="a7g-Wg-ADJ" firstAttribute="bottom" secondItem="Umz-i6-jdH" secondAttribute="bottom" constant="20" id="Rm3-AL-E9O"/>
+                            <constraint firstItem="a7g-Wg-ADJ" firstAttribute="trailing" secondItem="Umz-i6-jdH" secondAttribute="trailing" constant="20" id="xTN-Md-MqL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="a7g-Wg-ADJ"/>
                     </view>
+                    <connections>
+                        <outlet property="createButton" destination="TZT-SZ-2y3" id="Txs-I1-vn4"/>
+                        <outlet property="searchButton" destination="dN3-vC-1aP" id="hem-iQ-Jw8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sH5-Kj-aJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71" y="158"/>
+            <point key="canvasLocation" x="-71.200000000000003" y="157.87106446776613"/>
         </scene>
     </scenes>
 </document>
