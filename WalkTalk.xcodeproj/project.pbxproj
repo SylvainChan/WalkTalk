@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C73ADF3923F06B9900C9FEAA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ADF3823F06B9900C9FEAA /* UIColorExtension.swift */; };
+		C73ADF3C23F0922100C9FEAA /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ADF3B23F0922100C9FEAA /* Notification.swift */; };
 		C76F2ACC23ED9A1000942E6A /* EntranceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76F2AC423ED9A1000942E6A /* EntranceStoryboard.storyboard */; };
 		C76F2ACD23ED9A1000942E6A /* EntrancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AC523ED9A1000942E6A /* EntrancePresenter.swift */; };
 		C76F2ACE23ED9A1000942E6A /* EntranceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AC623ED9A1000942E6A /* EntranceWorker.swift */; };
@@ -17,8 +19,25 @@
 		C76F2AD323ED9A1000942E6A /* EntranceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2ACB23ED9A1000942E6A /* EntranceInteractor.swift */; };
 		C76F2AD623ED9A5C00942E6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AD523ED9A5C00942E6A /* ViewController.swift */; };
 		C76F2AD923ED9AEF00942E6A /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AD823ED9AEF00942E6A /* UIStoryboardExtension.swift */; };
-		C76F2ADE23EDA49900942E6A /* PeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2ADD23EDA49900942E6A /* PeerManager.swift */; };
-		C76F2AE123EDA7F400942E6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AE023EDA7F400942E6A /* User.swift */; };
+		C76F2AE123EDA7F400942E6A /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AE023EDA7F400942E6A /* Sender.swift */; };
+		C7782EED23EF194D008E09D5 /* ChatRoomStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7782EE523EF194D008E09D5 /* ChatRoomStoryboard.storyboard */; };
+		C7782EEE23EF194D008E09D5 /* ChatRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782EE623EF194D008E09D5 /* ChatRoomPresenter.swift */; };
+		C7782EEF23EF194D008E09D5 /* ChatRoomWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782EE723EF194D008E09D5 /* ChatRoomWorker.swift */; };
+		C7782EF023EF194D008E09D5 /* ChatRoomRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782EE823EF194D008E09D5 /* ChatRoomRouter.swift */; };
+		C7782EF123EF194D008E09D5 /* ChatRoomModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782EE923EF194D008E09D5 /* ChatRoomModels.swift */; };
+		C7782EF223EF194D008E09D5 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782EEA23EF194D008E09D5 /* ChatRoomViewController.swift */; };
+		C7782EF323EF194D008E09D5 /* ChatRoomBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782EEB23EF194D008E09D5 /* ChatRoomBuilder.swift */; };
+		C7782EF423EF194D008E09D5 /* ChatRoomInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782EEC23EF194D008E09D5 /* ChatRoomInteractor.swift */; };
+		C7782EF823EFFF42008E09D5 /* UserConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782EF723EFFF42008E09D5 /* UserConnection.swift */; };
+		C7782EFA23F00D5A008E09D5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782EF923F00D5A008E09D5 /* Message.swift */; };
+		C7782F0923F022E8008E09D5 /* TableViewCellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782F0823F022E8008E09D5 /* TableViewCellHelper.swift */; };
+		C7782F1023F0270F008E09D5 /* MyMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782F0A23F0270F008E09D5 /* MyMessageTableViewCell.swift */; };
+		C7782F1123F0270F008E09D5 /* MyMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7782F0B23F0270F008E09D5 /* MyMessageTableViewCell.xib */; };
+		C7782F1223F0270F008E09D5 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782F0C23F0270F008E09D5 /* NoticeTableViewCell.swift */; };
+		C7782F1323F0270F008E09D5 /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7782F0D23F0270F008E09D5 /* NoticeTableViewCell.xib */; };
+		C7782F1423F0270F008E09D5 /* TheirMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7782F0E23F0270F008E09D5 /* TheirMessageTableViewCell.swift */; };
+		C7782F1523F0270F008E09D5 /* TheirMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7782F0F23F0270F008E09D5 /* TheirMessageTableViewCell.xib */; };
+		C79F5C9A23F09D860054EA2D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79F5C9923F09D860054EA2D /* UserNotifications.framework */; };
 		C7D1E1F123ED938F00DF3BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1E1F023ED938F00DF3BB8 /* AppDelegate.swift */; };
 		C7D1E1F523ED938F00DF3BB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1E1F423ED938F00DF3BB8 /* ContentView.swift */; };
 		C7D1E1F723ED939000DF3BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D1E1F623ED939000DF3BB8 /* Assets.xcassets */; };
@@ -38,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C73ADF3823F06B9900C9FEAA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		C73ADF3B23F0922100C9FEAA /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		C76F2AC423ED9A1000942E6A /* EntranceStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EntranceStoryboard.storyboard; sourceTree = "<group>"; };
 		C76F2AC523ED9A1000942E6A /* EntrancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrancePresenter.swift; sourceTree = "<group>"; };
 		C76F2AC623ED9A1000942E6A /* EntranceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceWorker.swift; sourceTree = "<group>"; };
@@ -48,8 +69,26 @@
 		C76F2ACB23ED9A1000942E6A /* EntranceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceInteractor.swift; sourceTree = "<group>"; };
 		C76F2AD523ED9A5C00942E6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C76F2AD823ED9AEF00942E6A /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
-		C76F2ADD23EDA49900942E6A /* PeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerManager.swift; sourceTree = "<group>"; };
-		C76F2AE023EDA7F400942E6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C76F2AE023EDA7F400942E6A /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		C7782EE523EF194D008E09D5 /* ChatRoomStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatRoomStoryboard.storyboard; sourceTree = "<group>"; };
+		C7782EE623EF194D008E09D5 /* ChatRoomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomPresenter.swift; sourceTree = "<group>"; };
+		C7782EE723EF194D008E09D5 /* ChatRoomWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomWorker.swift; sourceTree = "<group>"; };
+		C7782EE823EF194D008E09D5 /* ChatRoomRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomRouter.swift; sourceTree = "<group>"; };
+		C7782EE923EF194D008E09D5 /* ChatRoomModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomModels.swift; sourceTree = "<group>"; };
+		C7782EEA23EF194D008E09D5 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		C7782EEB23EF194D008E09D5 /* ChatRoomBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomBuilder.swift; sourceTree = "<group>"; };
+		C7782EEC23EF194D008E09D5 /* ChatRoomInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomInteractor.swift; sourceTree = "<group>"; };
+		C7782EF723EFFF42008E09D5 /* UserConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConnection.swift; sourceTree = "<group>"; };
+		C7782EF923F00D5A008E09D5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		C7782F0823F022E8008E09D5 /* TableViewCellHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellHelper.swift; sourceTree = "<group>"; };
+		C7782F0A23F0270F008E09D5 /* MyMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMessageTableViewCell.swift; sourceTree = "<group>"; };
+		C7782F0B23F0270F008E09D5 /* MyMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMessageTableViewCell.xib; sourceTree = "<group>"; };
+		C7782F0C23F0270F008E09D5 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
+		C7782F0D23F0270F008E09D5 /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
+		C7782F0E23F0270F008E09D5 /* TheirMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheirMessageTableViewCell.swift; sourceTree = "<group>"; };
+		C7782F0F23F0270F008E09D5 /* TheirMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TheirMessageTableViewCell.xib; sourceTree = "<group>"; };
+		C79F5C9723F09D090054EA2D /* WalkTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WalkTalk.entitlements; sourceTree = "<group>"; };
+		C79F5C9923F09D860054EA2D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C7D1E1ED23ED938F00DF3BB8 /* WalkTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D1E1F023ED938F00DF3BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7D1E1F423ED938F00DF3BB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79F5C9A23F09D860054EA2D /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,10 +123,8 @@
 		C76F2AC223ED997900942E6A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C76F2ADF23EDA7E100942E6A /* Entities */,
-				C76F2ADC23EDA47A00942E6A /* Manager */,
-				C76F2AD423ED9A2900942E6A /* Common */,
 				C76F2AC323ED99C000942E6A /* Entrance */,
+				C7782EE423EF1930008E09D5 /* ChatRoom */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -118,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				C76F2AD823ED9AEF00942E6A /* UIStoryboardExtension.swift */,
+				C73ADF3823F06B9900C9FEAA /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -125,7 +164,6 @@
 		C76F2ADC23EDA47A00942E6A /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				C76F2ADD23EDA49900942E6A /* PeerManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -133,9 +171,57 @@
 		C76F2ADF23EDA7E100942E6A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				C76F2AE023EDA7F400942E6A /* User.swift */,
+				C76F2AE023EDA7F400942E6A /* Sender.swift */,
+				C7782EF723EFFF42008E09D5 /* UserConnection.swift */,
+				C7782EF923F00D5A008E09D5 /* Message.swift */,
+				C73ADF3B23F0922100C9FEAA /* Notification.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		C7782EE423EF1930008E09D5 /* ChatRoom */ = {
+			isa = PBXGroup;
+			children = (
+				C7782EFB23F014A8008E09D5 /* Views */,
+				C7782EE523EF194D008E09D5 /* ChatRoomStoryboard.storyboard */,
+				C7782EE623EF194D008E09D5 /* ChatRoomPresenter.swift */,
+				C7782EE723EF194D008E09D5 /* ChatRoomWorker.swift */,
+				C7782EE823EF194D008E09D5 /* ChatRoomRouter.swift */,
+				C7782EE923EF194D008E09D5 /* ChatRoomModels.swift */,
+				C7782EEA23EF194D008E09D5 /* ChatRoomViewController.swift */,
+				C7782EEB23EF194D008E09D5 /* ChatRoomBuilder.swift */,
+				C7782EEC23EF194D008E09D5 /* ChatRoomInteractor.swift */,
+			);
+			path = ChatRoom;
+			sourceTree = "<group>";
+		};
+		C7782EFB23F014A8008E09D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7782F0A23F0270F008E09D5 /* MyMessageTableViewCell.swift */,
+				C7782F0B23F0270F008E09D5 /* MyMessageTableViewCell.xib */,
+				C7782F0C23F0270F008E09D5 /* NoticeTableViewCell.swift */,
+				C7782F0D23F0270F008E09D5 /* NoticeTableViewCell.xib */,
+				C7782F0E23F0270F008E09D5 /* TheirMessageTableViewCell.swift */,
+				C7782F0F23F0270F008E09D5 /* TheirMessageTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C7782F0723F022DA008E09D5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C7782F0823F022E8008E09D5 /* TableViewCellHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C79F5C9823F09D860054EA2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C79F5C9923F09D860054EA2D /* UserNotifications.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C7D1E1E423ED938F00DF3BB8 = {
@@ -144,6 +230,7 @@
 				C7D1E1EF23ED938F00DF3BB8 /* WalkTalk */,
 				C7D1E20623ED939000DF3BB8 /* WalkTalkTests */,
 				C7D1E1EE23ED938F00DF3BB8 /* Products */,
+				C79F5C9823F09D860054EA2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,7 +246,12 @@
 		C7D1E1EF23ED938F00DF3BB8 /* WalkTalk */ = {
 			isa = PBXGroup;
 			children = (
+				C79F5C9723F09D090054EA2D /* WalkTalk.entitlements */,
+				C7782F0723F022DA008E09D5 /* Helper */,
+				C76F2ADC23EDA47A00942E6A /* Manager */,
 				C76F2AD723ED9AE400942E6A /* Extension */,
+				C76F2ADF23EDA7E100942E6A /* Entities */,
+				C76F2AD423ED9A2900942E6A /* Common */,
 				C76F2AC223ED997900942E6A /* Scenes */,
 				C7D1E1F023ED938F00DF3BB8 /* AppDelegate.swift */,
 				C7D1E1F423ED938F00DF3BB8 /* ContentView.swift */,
@@ -270,8 +362,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D1E1FD23ED939000DF3BB8 /* LaunchScreen.storyboard in Resources */,
+				C7782EED23EF194D008E09D5 /* ChatRoomStoryboard.storyboard in Resources */,
+				C7782F1523F0270F008E09D5 /* TheirMessageTableViewCell.xib in Resources */,
 				C76F2ACC23ED9A1000942E6A /* EntranceStoryboard.storyboard in Resources */,
+				C7782F1123F0270F008E09D5 /* MyMessageTableViewCell.xib in Resources */,
 				C7D1E1FA23ED939000DF3BB8 /* Preview Assets.xcassets in Resources */,
+				C7782F1323F0270F008E09D5 /* NoticeTableViewCell.xib in Resources */,
 				C7D1E1F723ED939000DF3BB8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,19 +386,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7782EEF23EF194D008E09D5 /* ChatRoomWorker.swift in Sources */,
 				C76F2ACF23ED9A1000942E6A /* EntranceRouter.swift in Sources */,
 				C7D1E1F123ED938F00DF3BB8 /* AppDelegate.swift in Sources */,
-				C76F2ADE23EDA49900942E6A /* PeerManager.swift in Sources */,
+				C7782F1223F0270F008E09D5 /* NoticeTableViewCell.swift in Sources */,
+				C7782EF823EFFF42008E09D5 /* UserConnection.swift in Sources */,
+				C7782F1023F0270F008E09D5 /* MyMessageTableViewCell.swift in Sources */,
 				C76F2AD023ED9A1000942E6A /* EntranceModels.swift in Sources */,
 				C76F2AD623ED9A5C00942E6A /* ViewController.swift in Sources */,
-				C76F2AE123EDA7F400942E6A /* User.swift in Sources */,
+				C76F2AE123EDA7F400942E6A /* Sender.swift in Sources */,
 				C76F2AD323ED9A1000942E6A /* EntranceInteractor.swift in Sources */,
 				C76F2ACD23ED9A1000942E6A /* EntrancePresenter.swift in Sources */,
+				C7782EF323EF194D008E09D5 /* ChatRoomBuilder.swift in Sources */,
+				C7782F1423F0270F008E09D5 /* TheirMessageTableViewCell.swift in Sources */,
+				C73ADF3923F06B9900C9FEAA /* UIColorExtension.swift in Sources */,
 				C7D1E1F523ED938F00DF3BB8 /* ContentView.swift in Sources */,
 				C76F2AD123ED9A1000942E6A /* EntranceViewController.swift in Sources */,
+				C7782EF123EF194D008E09D5 /* ChatRoomModels.swift in Sources */,
 				C76F2ACE23ED9A1000942E6A /* EntranceWorker.swift in Sources */,
+				C7782F0923F022E8008E09D5 /* TableViewCellHelper.swift in Sources */,
+				C7782EEE23EF194D008E09D5 /* ChatRoomPresenter.swift in Sources */,
+				C73ADF3C23F0922100C9FEAA /* Notification.swift in Sources */,
+				C7782EFA23F00D5A008E09D5 /* Message.swift in Sources */,
+				C7782EF423EF194D008E09D5 /* ChatRoomInteractor.swift in Sources */,
+				C7782EF023EF194D008E09D5 /* ChatRoomRouter.swift in Sources */,
 				C76F2AD923ED9AEF00942E6A /* UIStoryboardExtension.swift in Sources */,
 				C76F2AD223ED9A1000942E6A /* EntranceBuilder.swift in Sources */,
+				C7782EF223EF194D008E09D5 /* ChatRoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +564,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WalkTalk/WalkTalk.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WalkTalk/Preview Content\"";
 				DEVELOPMENT_TEAM = 4DMXJ47M5Y;
@@ -464,10 +576,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sylvain.WalkTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sylvain.walktalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -475,6 +588,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WalkTalk/WalkTalk.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WalkTalk/Preview Content\"";
 				DEVELOPMENT_TEAM = 4DMXJ47M5Y;
@@ -485,10 +600,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sylvain.WalkTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sylvain.walktalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
