@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum WTNotification: String {
+    case pushTokenUpdated = "pushTokenUpdated"
+    case appWillTerminate = "appWillTerminate"
+}
