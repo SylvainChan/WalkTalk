@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct User {
+struct Sender {
     let id: String
     let name: String
 }
