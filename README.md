@@ -101,6 +101,9 @@ Push notification is available in this app. Only when user is connected to the a
 # Background Mode
 This app support background process, which can allow user receive message (both F/E and remote push notification) even the app is not on foreground, for a limited period of time controlled by native. After the background thread is being stopped, the user will be treated as disconnected and will not be able to receive any new message push notification.
 
+# Coding Architecture
+The Entrance View is written in traditional MVC architecture, while the Chat View Scene is written in CleanSwift / VIPer approach.
+
 # To Be Added
 Due to limited time, the MVP of the product supports only text exchange. In the future, we planned to add following features and quality enhancements:
 
