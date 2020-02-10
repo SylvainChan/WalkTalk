@@ -10,6 +10,7 @@ import UIKit
 import MultipeerConnectivity
 
 struct UserConnection {
+    static var pushToken: String? = nil
     
     class Credential: NSObject, Codable {
         let channel: String
