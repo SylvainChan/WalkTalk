@@ -13,6 +13,8 @@ struct Message: Codable {
         case greeting
         case requestIdentity
         case message
+        case retrieveHistory
+        case deviceToken
     }
     
     let type: PayloadType
