@@ -14,7 +14,7 @@ struct Message: Codable {
         case greeting
         case requestIdentity
         case message
-        case retrieveHistory
+//        case retrieveHistory
         case deviceToken
     }
     

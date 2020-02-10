@@ -251,9 +251,6 @@ extension ChatRoomInteractor: MCSessionDelegate {
                 self.presenter?.presentUpdatedMessage(response: self.messages)
             }
             
-        case .retrieveHistory:
-            break
-            
         case .deviceToken:
             if
                 let messageData = message.message,
