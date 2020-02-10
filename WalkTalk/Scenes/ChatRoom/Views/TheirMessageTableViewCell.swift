@@ -1,5 +1,5 @@
 //
-//  MyMessageTableViewCell.swift
+//  TheirMessageTableViewCell.swift
 //  WalkTalk
 //
 //  Created by Sylvain Chan on 9/2/2020.
@@ -8,14 +8,15 @@
 
 import UIKit
 
-class MyMessageTableViewCell: UITableViewCell {
+class TheirMessageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageContainerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.messageContainerView.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
