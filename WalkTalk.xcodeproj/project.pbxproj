@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C73ADF3923F06B9900C9FEAA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ADF3823F06B9900C9FEAA /* UIColorExtension.swift */; };
 		C73ADF3C23F0922100C9FEAA /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ADF3B23F0922100C9FEAA /* Notification.swift */; };
+		C75E1F6723F13768006D3C59 /* SenderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E1F6623F13768006D3C59 /* SenderTest.swift */; };
 		C76F2ACC23ED9A1000942E6A /* EntranceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76F2AC423ED9A1000942E6A /* EntranceStoryboard.storyboard */; };
 		C76F2ACD23ED9A1000942E6A /* EntrancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AC523ED9A1000942E6A /* EntrancePresenter.swift */; };
 		C76F2ACE23ED9A1000942E6A /* EntranceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F2AC623ED9A1000942E6A /* EntranceWorker.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		C73ADF3823F06B9900C9FEAA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		C73ADF3B23F0922100C9FEAA /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		C75E1F6623F13768006D3C59 /* SenderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderTest.swift; sourceTree = "<group>"; };
 		C76F2AC423ED9A1000942E6A /* EntranceStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EntranceStoryboard.storyboard; sourceTree = "<group>"; };
 		C76F2AC523ED9A1000942E6A /* EntrancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrancePresenter.swift; sourceTree = "<group>"; };
 		C76F2AC623ED9A1000942E6A /* EntranceWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceWorker.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				C7D1E20723ED939000DF3BB8 /* WalkTalkTests.swift */,
 				C7D1E20923ED939000DF3BB8 /* Info.plist */,
+				C75E1F6623F13768006D3C59 /* SenderTest.swift */,
 			);
 			path = WalkTalkTests;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C75E1F6723F13768006D3C59 /* SenderTest.swift in Sources */,
 				C7D1E20823ED939000DF3BB8 /* WalkTalkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
