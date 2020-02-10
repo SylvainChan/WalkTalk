@@ -27,13 +27,20 @@ class EntranceViewController: ViewController, EntranceDisplayLogic {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var createButton: UIButton!
     
+    @IBOutlet weak var channelInputStackView: UIStackView!
+    @IBOutlet weak var nameInputStackView: UIStackView!
+    
+    @IBOutlet weak var channelInputField: UITextField!
+    @IBOutlet weak var usernameInputField: UITextField!
+    
     //
-    private let session = MCSession(
-        peer: MCPeerID(displayName: UIDevice.current.name),
-        securityIdentity: nil,
-        encryptionPreference: MCEncryptionPreference.required
-    )
-    private var assistant: MCAdvertiserAssistant?
+    private var peer: MCPeerID?
+    private var session: MCSession?
+    
+    // keys
+    private let peerKey = "pPeer"
+    private let nameKey = "pName"
+    private let channelKey = "pChannel"
     
     // VIP
     var interactor: EntranceBusinessLogic?
@@ -45,35 +52,103 @@ class EntranceViewController: ViewController, EntranceDisplayLogic {
 extension EntranceViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.session.delegate = self
+        
+        // prefill
+        if let previousName = UserDefaults.standard.string(forKey: self.nameKey) {
+            self.usernameInputField.text = previousName
+        }
+        
+        if let previousChannel = UserDefaults.standard.string(forKey: self.channelKey) {
+            self.channelInputField.text = previousChannel
+        }
+        
+        // view init
+        self.title = "Walkie"
+        self.enableButtonIfNeeded()
     }
 }
 
 // MARK:- View Display logic entry point
 extension EntranceViewController {
     
-    @IBAction func buttonDidPress(_ sender: UIButton) {
-        DispatchQueue.main.async {
+    private func generatePeer() {
+        let id = UIDevice.current.name
+        let peer: MCPeerID
+        
+        if
+            let previousPeerData = UserDefaults.standard.data(forKey: self.peerKey),
+            let previousPeer = try? NSKeyedUnarchiver.unarchivedObject(ofClass: MCPeerID.self, from: previousPeerData),
+            previousPeer.displayName == id
+        {
+            peer = previousPeer
+        }
+        else {
+            peer = MCPeerID(displayName: id)
             
+            // set to cache
+            let peerData = try? NSKeyedArchiver.archivedData(withRootObject: peer, requiringSecureCoding: true)
+            UserDefaults.standard.set(peerData, forKey: self.peerKey)
+            UserDefaults.standard.synchronize()
+        }
+        
+        self.peer = peer
+    }
+    
+    private func generateSession() {
+        guard let peer = self.peer else { return }
+        
+        // safely quit previous connection if there is any
+        self.session?.disconnect()
+        
+        let session = MCSession(peer: peer, securityIdentity: nil, encryptionPreference: .required)
+        self.session = session
+    }
+    
+    @IBAction func buttonDidPress(_ sender: UIButton) {
+        
+        if self.channelInputStackView.arrangedSubviews.count > 1 {
+            self.channelInputStackView.arrangedSubviews[1].removeFromSuperview()
+        }
+        
+        self.generatePeer()
+        self.generateSession()
+        
+        guard
+            let channel = self.channelInputField.text,
+            let name = self.usernameInputField.text,
+            let session = self.session,
+            let regex = try? NSRegularExpression(pattern: "^([a-zA-Z0-9]*[a-zA-Z][a-zA-Z0-9]*){1,15}$", options: .caseInsensitive)
+        else { return }
+        
+        let channelStringRange = NSRange(location: 0, length: channel.count)
+        guard regex.firstMatch(in: channel, options: [], range: channelStringRange) != nil else {
+            let errorLabel = UILabel()
+            errorLabel.translatesAutoresizingMaskIntoConstraints = false
+            errorLabel.numberOfLines = 0
+            errorLabel.text = "Channel name must contain at least one alphabetic character + Only alphanumeric is accepted."
+            errorLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+            errorLabel.textColor = UIColor.red
+            self.channelInputStackView.addArrangedSubview(errorLabel)
+            return
+        }
+        
+        // set to cache
+        UserDefaults.standard.set(name, forKey: self.nameKey)
+        UserDefaults.standard.set(channel, forKey: self.channelKey)
+        UserDefaults.standard.synchronize()
+        
+        DispatchQueue.main.async {
             switch sender {
             case self.searchButton:
                 let vc = MCBrowserViewController(
-                    serviceType: "ioscreator-chat",
-                    session: self.session
+                    serviceType: channel,
+                    session: session
                 )
                 vc.delegate = self
                 self.present(vc, animated: true, completion: nil)
                 
             case self.createButton:
-                let assistant = MCAdvertiserAssistant(
-                    serviceType: "ioscreator-chat",
-                    discoveryInfo: nil,
-                    session: self.session
-                    
-                )
-                assistant.delegate = self
-                assistant.start()
-                self.assistant = assistant
+                self.pushToChatRoom()
                 
             default: return
             }
@@ -82,48 +157,62 @@ extension EntranceViewController {
     }
 }
 
-extension EntranceViewController: MCSessionDelegate {
-    
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        
+// MARK: - Input checking logic goes here
+extension EntranceViewController {
+    @IBAction func textFieldDidUpdate(_ sender: Any) {
+        self.enableButtonIfNeeded()
     }
     
-    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+    private func enableButtonIfNeeded() {
+        let enable = !(self.channelInputField.text?.isEmpty ?? true) && !(self.usernameInputField.text?.isEmpty ?? true)
         
-    }
-    
-    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+        self.createButton.isUserInteractionEnabled = enable
+        self.searchButton.isUserInteractionEnabled = enable
         
+        if enable {
+            self.createButton.alpha = 1
+            self.searchButton.alpha = 1
+        }
+        else {
+            self.createButton.alpha = 0.3
+            self.searchButton.alpha = 0.3
+        }
     }
-    
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-        
-    }
-    
-    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        
-    }
+
 }
 
+// MARK: - browser view delegate
 extension EntranceViewController: MCBrowserViewControllerDelegate {
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        browserViewController.dismiss(animated: true, completion: nil)
+        browserViewController.dismiss(animated: true) {
+            self.pushToChatRoomIfHaveConnection()
+        }
     }
     
     func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        browserViewController.dismiss(animated: true, completion: nil)
+        browserViewController.dismiss(animated: true) {
+            self.pushToChatRoomIfHaveConnection()
+        }
     }
-    
 }
 
-extension EntranceViewController: MCAdvertiserAssistantDelegate {
-    func advertiserAssistantWillPresentInvitation(_ advertiserAssistant: MCAdvertiserAssistant) {
-        
+extension EntranceViewController {
+    
+    func pushToChatRoomIfHaveConnection() {
+        if self.session?.connectedPeers.count ?? 0 > 0 {
+            self.pushToChatRoom()
+        }
     }
     
-    func advertiserAssistantDidDismissInvitation(_ advertiserAssistant: MCAdvertiserAssistant) {
+    func pushToChatRoom() {
+        guard
+            let channel = self.channelInputField.text,
+            let name = self.usernameInputField.text,
+            let session = self.session
+        else { return }
         
+        let vc = ChatRoomBuilder.createScene(request: ChatRoomBuilder.BuildRequest(connection: UserConnection(session: session, channel: channel, name: name)))
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
+        
 }

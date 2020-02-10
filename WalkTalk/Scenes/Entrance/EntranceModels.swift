@@ -10,4 +10,11 @@ import UIKit
 
 // MARK: - Models will go here
 // Defines request, response and corresponding view models
-enum Entrance {}
+enum Entrance {
+    
+    enum Error {
+        case emptyChannelName
+        case emptyUserName
+    }
+    
+}
