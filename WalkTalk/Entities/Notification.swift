@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Define the notification we will send in the app
 enum WTNotification: String {
     case pushTokenUpdated = "pushTokenUpdated"
     case appWillTerminate = "appWillTerminate"

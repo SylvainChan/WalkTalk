@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Message entity that will be sent over network
 struct Message: Codable {
     enum PayloadType: Int, Codable {
         case greeting

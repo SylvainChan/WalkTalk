@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = navVC
         self.window = window
         
-        // push
+        // push registration
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (can, error) in
             DispatchQueue.main.async {

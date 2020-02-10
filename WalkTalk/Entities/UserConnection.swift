@@ -9,6 +9,7 @@
 import UIKit
 import MultipeerConnectivity
 
+// Retain and handle connect level information
 struct UserConnection {
     static var pushToken: String? = nil
     

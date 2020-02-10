@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Peer extra information, for F/E display purpose
 class Sender {
     private(set) var name: String
     let color: UIColor

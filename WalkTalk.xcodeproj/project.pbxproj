@@ -40,7 +40,6 @@
 		C7782F1523F0270F008E09D5 /* TheirMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7782F0F23F0270F008E09D5 /* TheirMessageTableViewCell.xib */; };
 		C79F5C9A23F09D860054EA2D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79F5C9923F09D860054EA2D /* UserNotifications.framework */; };
 		C7D1E1F123ED938F00DF3BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1E1F023ED938F00DF3BB8 /* AppDelegate.swift */; };
-		C7D1E1F523ED938F00DF3BB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1E1F423ED938F00DF3BB8 /* ContentView.swift */; };
 		C7D1E1F723ED939000DF3BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D1E1F623ED939000DF3BB8 /* Assets.xcassets */; };
 		C7D1E1FA23ED939000DF3BB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D1E1F923ED939000DF3BB8 /* Preview Assets.xcassets */; };
 		C7D1E1FD23ED939000DF3BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7D1E1FB23ED939000DF3BB8 /* LaunchScreen.storyboard */; };
@@ -93,7 +92,6 @@
 		C79F5C9923F09D860054EA2D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C7D1E1ED23ED938F00DF3BB8 /* WalkTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D1E1F023ED938F00DF3BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C7D1E1F423ED938F00DF3BB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C7D1E1F623ED939000DF3BB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7D1E1F923ED939000DF3BB8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C7D1E1FC23ED939000DF3BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -161,13 +159,6 @@
 				C73ADF3823F06B9900C9FEAA /* UIColorExtension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		C76F2ADC23EDA47A00942E6A /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		C76F2ADF23EDA7E100942E6A /* Entities */ = {
@@ -250,13 +241,11 @@
 			children = (
 				C79F5C9723F09D090054EA2D /* WalkTalk.entitlements */,
 				C7782F0723F022DA008E09D5 /* Helper */,
-				C76F2ADC23EDA47A00942E6A /* Manager */,
 				C76F2AD723ED9AE400942E6A /* Extension */,
 				C76F2ADF23EDA7E100942E6A /* Entities */,
 				C76F2AD423ED9A2900942E6A /* Common */,
 				C76F2AC223ED997900942E6A /* Scenes */,
 				C7D1E1F023ED938F00DF3BB8 /* AppDelegate.swift */,
-				C7D1E1F423ED938F00DF3BB8 /* ContentView.swift */,
 				C7D1E1F623ED939000DF3BB8 /* Assets.xcassets */,
 				C7D1E1FB23ED939000DF3BB8 /* LaunchScreen.storyboard */,
 				C7D1E1FE23ED939000DF3BB8 /* Info.plist */,
@@ -403,7 +392,6 @@
 				C7782EF323EF194D008E09D5 /* ChatRoomBuilder.swift in Sources */,
 				C7782F1423F0270F008E09D5 /* TheirMessageTableViewCell.swift in Sources */,
 				C73ADF3923F06B9900C9FEAA /* UIColorExtension.swift in Sources */,
-				C7D1E1F523ED938F00DF3BB8 /* ContentView.swift in Sources */,
 				C76F2AD123ED9A1000942E6A /* EntranceViewController.swift in Sources */,
 				C7782EF123EF194D008E09D5 /* ChatRoomModels.swift in Sources */,
 				C76F2ACE23ED9A1000942E6A /* EntranceWorker.swift in Sources */,
