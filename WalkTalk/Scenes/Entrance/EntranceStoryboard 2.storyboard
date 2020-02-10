@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Entrance View Controller-->
+        <scene sceneID="jkF-uZ-Cdt">
+            <objects>
+                <viewController storyboardIdentifier="EntranceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pCD-Nm-RIc" customClass="EntranceViewController" customModule="WalkTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kpx-MD-0dj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Umz-i6-jdH">
+                                <rect key="frame" x="20" y="130" width="335" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZT-SZ-2y3" userLabel="Create">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="55"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="fvB-GT-sQm"/>
+                                        </constraints>
+                                        <state key="normal" title="Enter Room">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonDidPress:" destination="pCD-Nm-RIc" eventType="touchUpInside" id="zZv-Lt-zKs"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dN3-vC-1aP">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="91u-4W-3z7"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonDidPress:" destination="pCD-Nm-RIc" eventType="touchUpInside" id="pph-CX-uMQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="W0I-Ya-03g">
+                                <rect key="frame" x="20" y="10" width="335" height="95"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-9C-jYH">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ggE-xJ-Rgz" userLabel="Channel Stack View">
+                                        <rect key="frame" x="0.0" y="22" width="335" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abu-Nj-QQy">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="zkr-gv-nxp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wg8-0A-fyz">
+                                                <rect key="frame" x="105" y="0.0" width="230" height="34"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your channel ID here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wl6-V3-fxl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="230" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldDidUpdate:" destination="pCD-Nm-RIc" eventType="editingDidBegin" id="Cw6-Eh-tTC"/>
+                                                            <action selector="textFieldDidUpdate:" destination="pCD-Nm-RIc" eventType="editingChanged" id="DdT-0U-SOB"/>
+                                                            <action selector="textFieldDidUpdate:" destination="pCD-Nm-RIc" eventType="editingDidEnd" id="K8G-9z-h3U"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="c9K-Mm-MBw" userLabel="Username Stack View">
+                                        <rect key="frame" x="0.0" y="61" width="335" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78z-cG-UD1">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="0mn-Ns-I0A"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PmV-Nv-naM">
+                                                <rect key="frame" x="105" y="0.0" width="230" height="34"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your username here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DR9-Nf-laT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="230" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldDidUpdate:" destination="pCD-Nm-RIc" eventType="editingChanged" id="5Ka-jA-8ig"/>
+                                                            <action selector="textFieldDidUpdate:" destination="pCD-Nm-RIc" eventType="editingDidBegin" id="w3h-eq-30A"/>
+                                                            <action selector="textFieldDidUpdate:" destination="pCD-Nm-RIc" eventType="editingDidEnd" id="xYU-wL-26V"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Umz-i6-jdH" firstAttribute="leading" secondItem="a7g-Wg-ADJ" secondAttribute="leading" constant="20" id="2Hw-2v-FWp"/>
+                            <constraint firstItem="Umz-i6-jdH" firstAttribute="top" secondItem="W0I-Ya-03g" secondAttribute="bottom" constant="25" id="I7n-E4-2v3"/>
+                            <constraint firstItem="W0I-Ya-03g" firstAttribute="leading" secondItem="a7g-Wg-ADJ" secondAttribute="leading" constant="20" id="Nhf-bg-EYj"/>
+                            <constraint firstItem="a7g-Wg-ADJ" firstAttribute="trailing" secondItem="W0I-Ya-03g" secondAttribute="trailing" constant="20" id="Wfo-Kz-Oov"/>
+                            <constraint firstItem="W0I-Ya-03g" firstAttribute="top" secondItem="a7g-Wg-ADJ" secondAttribute="top" constant="10" id="mOm-A2-4Dg"/>
+                            <constraint firstItem="W0I-Ya-03g" firstAttribute="centerX" secondItem="a7g-Wg-ADJ" secondAttribute="centerX" id="vSp-sS-OZY"/>
+                            <constraint firstItem="a7g-Wg-ADJ" firstAttribute="trailing" secondItem="Umz-i6-jdH" secondAttribute="trailing" constant="20" id="xTN-Md-MqL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a7g-Wg-ADJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="channelInputField" destination="Wl6-V3-fxl" id="KYJ-kb-uAQ"/>
+                        <outlet property="channelInputStackView" destination="wg8-0A-fyz" id="wR0-b8-fRC"/>
+                        <outlet property="createButton" destination="TZT-SZ-2y3" id="Txs-I1-vn4"/>
+                        <outlet property="nameInputStackView" destination="PmV-Nv-naM" id="gNH-Qg-uB0"/>
+                        <outlet property="searchButton" destination="dN3-vC-1aP" id="hem-iQ-Jw8"/>
+                        <outlet property="usernameInputField" destination="DR9-Nf-laT" id="4Ku-Aw-7Ad"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sH5-Kj-aJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.200000000000003" y="157.87106446776613"/>
+        </scene>
+    </scenes>
+</document>
