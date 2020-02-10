@@ -8,7 +8,17 @@
 
 import UIKit
 
-struct Sender {
-    let id: String
-    let name: String
+class Sender {
+    private(set) var name: String
+    let color: UIColor
+    var deviceToken: String? = nil
+    
+    func updateName(name: String) {
+        self.name = name
+    }
+    
+    init(name: String, color: UIColor) {
+        self.name = name
+        self.color = color
+    }
 }
