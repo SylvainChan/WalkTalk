@@ -23,7 +23,6 @@ protocol ChatRoomBusinessLogic {
 
 // MARK: - Datas retain in interactor defines here
 protocol ChatRoomDataStore {
-    
     var connection: UserConnection { get }
     var me: Sender { get set }
     
