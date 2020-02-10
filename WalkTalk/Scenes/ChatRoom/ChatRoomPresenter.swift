@@ -31,6 +31,7 @@ class ChatRoomPresenter: ChatRoomPresentationLogic {
 
 // MARK: - Presentation receiver
 extension ChatRoomPresenter {
+    // will show text corresponding to connection status
     func presentChatRoomStatus(response: ChatRoom.Response.ChatRoomStatus) {
         switch response.status {
         case .connected:

@@ -83,45 +83,13 @@ extension ChatRoomViewController {
         self.messageTableView.register(TableViewCell.notice.nib, forCellReuseIdentifier: TableViewCell.notice.reuseId)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.interactor?.viewDidAppear()
-    }
-    
+    // setup nav bar items
     func prepareNavigationItem() {
         let quitButton = UIBarButtonItem.init(title: "Exit", style: .plain, target: self, action: #selector(self.barBackButtonDidPress))
         self.navigationItem.leftBarButtonItems = [quitButton]
         
         let searchButton = UIBarButtonItem.init(title: "Search", style: .plain, target: self, action: #selector(self.barSearchButtonDidPress))
         self.navigationItem.rightBarButtonItems = [searchButton]
-    }
-    
-    func displayPredefinedMessage(viewModel: ChatRoom.ViewModel.PredefinedMessage) {
-        self.predefinedMessageButtons.removeAll()
-        
-        for string in viewModel.all {
-            let button = UIButton(type: .system)
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.setTitle(string, for: .normal)
-            button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.systemBlue.cgColor
-            button.layer.cornerRadius = 15
-            
-            button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-            
-            button.addTarget(self, action: #selector(self.buttonDidPress(_:)), for: .touchUpInside)
-            
-            self.predefinedMessageButtons.append(button)
-            self.predefinedMessageStackView.addArrangedSubview(button)
-        }
-    }
-    
-    func displayUserInteractiveElements(viewModel: ChatRoom.ViewModel.UserInteractiveElements) {
-        DispatchQueue.main.async {
-            self.sendbutton.isUserInteractionEnabled = viewModel.enable
-            self.predefinedMessageStackView.isUserInteractionEnabled = viewModel.enable
-            self.inputTextField.isUserInteractionEnabled = viewModel.enable
-        }
     }
 }
 
@@ -174,8 +142,8 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-// MARK:- View Display logic entry point
-extension ChatRoomViewController: MCAdvertiserAssistantDelegate {
+// MARK: - User interaction
+extension ChatRoomViewController {
     @objc func barBackButtonDidPress() {
         self.interactor?.requestHandleBarBackButtonDidPress()
     }
@@ -194,6 +162,10 @@ extension ChatRoomViewController: MCAdvertiserAssistantDelegate {
             }
         }
     }
+}
+
+// MARK: - View routing
+extension ChatRoomViewController {
     
     func quitChat() {
         self.router?.routeBack()
@@ -208,7 +180,38 @@ extension ChatRoomViewController: MCAdvertiserAssistantDelegate {
     }
 }
 
-// MARK: - Message handle
+// MARK: - Generate view model display
+extension ChatRoomViewController {
+    func displayPredefinedMessage(viewModel: ChatRoom.ViewModel.PredefinedMessage) {
+        self.predefinedMessageButtons.removeAll()
+        
+        for string in viewModel.all {
+            let button = UIButton(type: .system)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.setTitle(string, for: .normal)
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.systemBlue.cgColor
+            button.layer.cornerRadius = 15
+            
+            button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+            
+            button.addTarget(self, action: #selector(self.buttonDidPress(_:)), for: .touchUpInside)
+            
+            self.predefinedMessageButtons.append(button)
+            self.predefinedMessageStackView.addArrangedSubview(button)
+        }
+    }
+    
+    func displayUserInteractiveElements(viewModel: ChatRoom.ViewModel.UserInteractiveElements) {
+        DispatchQueue.main.async {
+            self.sendbutton.isUserInteractionEnabled = viewModel.enable
+            self.predefinedMessageStackView.isUserInteractionEnabled = viewModel.enable
+            self.inputTextField.isUserInteractionEnabled = viewModel.enable
+        }
+    }
+}
+
+// MARK: - Message display handle
 extension ChatRoomViewController {
     func displayEmptyInputField() {
         DispatchQueue.main.async {
@@ -228,6 +231,7 @@ extension ChatRoomViewController {
         }
     }
     
+    // Scroll the chat view to bottom (latest message)
     func displayBottom() {
         DispatchQueue.main.async {
             self.messageTableView.setContentOffset(CGPoint(
@@ -249,6 +253,7 @@ extension ChatRoomViewController {
         self.interactor?.requestHandleTokenUpdateNotification()
     }
     
+    // Correct the input view frame so as to not blocked by keyboard
     @objc func keyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
@@ -261,6 +266,7 @@ extension ChatRoomViewController {
         }
     }
     
+    // reset input view to normal
     @objc func keyboardWillHide(_ notification: Notification) {
         self.viewBottomConstraint.constant = 0
         UIView.animate(withDuration: 0.24) {
