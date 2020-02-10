@@ -3,6 +3,9 @@
 
 The purpose of this project is to create a walkie talkie chatting app that would operate in local network using iOS Bonjour networking technique.
 
+# Demo Video
+https://github.com/SylvainChan/WalkTalk/releases/download/1.0.0/Demo.wk.m4v
+
 # Try the app
 Simply download the source project and compile it in XCode 11.3.1.
 
