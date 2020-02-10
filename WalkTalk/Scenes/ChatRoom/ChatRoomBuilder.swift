@@ -9,6 +9,7 @@
 // Scene Builder, init and config scene here
 
 import UIKit
+import MultipeerConnectivity
 
 // MARK: - Main builder body
 class ChatRoomBuilder {
@@ -29,6 +30,9 @@ class ChatRoomBuilder {
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
+        
+        // session delegate assignment
+        request.connection.session.delegate = interactor
 
         return viewController
     }
@@ -40,6 +44,6 @@ class ChatRoomBuilder {
 */
 extension ChatRoomBuilder {
     struct BuildRequest {
-
+        let connection: UserConnection
     }
 }
