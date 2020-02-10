@@ -14,7 +14,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="KCl-Wx-WtG">
+                                <rect key="frame" x="107" y="353" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Ngt-vf-ob9"/>
+                                    <constraint firstAttribute="width" secondItem="KCl-Wx-WtG" secondAttribute="height" multiplier="1:1" id="XGD-Be-d3m"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WalkTalk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyV-Om-L7q">
+                                <rect key="frame" x="163.5" y="568" width="87" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qyV-Om-L7q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5VJ-ll-Skv"/>
+                            <constraint firstItem="qyV-Om-L7q" firstAttribute="top" secondItem="KCl-Wx-WtG" secondAttribute="bottom" constant="15" id="BUo-FY-9Wb"/>
+                            <constraint firstItem="KCl-Wx-WtG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MG0-3G-cHf"/>
+                            <constraint firstItem="KCl-Wx-WtG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="scW-lb-8Cb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -23,4 +44,7 @@
             <point key="canvasLocation" x="-57" y="283"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="appstore" width="1024" height="1024"/>
+    </resources>
 </document>
